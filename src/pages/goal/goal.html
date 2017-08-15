@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Objectif
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Définissez votre objectif</h1>
+  <form ng-submit="calculateGoal(goal)">
+
+  <ion-list>
+
+
+  <ion-item>
+    <ion-label floating>Distance (km)</ion-label>
+    <ion-input type="text" ng-model="goal.distance"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Vitesse moyenne (km/h)</ion-label>
+    <ion-input type="text"  ng-model="goal.speed"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<button ion-button round>Calculez l'objectif</button>
+</form>
+</ion-content>
