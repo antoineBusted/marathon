@@ -7,24 +7,29 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Définissez votre objectif</h1>
-  <form ng-submit="calculateGoal(goal)">
 
-  <ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12  *ngIf="displayForm">
+        <h1>Définissez votre objectif</h1>
+        <form (ngSubmit)="submitGoal()" novalidate>
+        <ion-item>
+          <ion-label floating>Distance (km)</ion-label>
+          <ion-input type="text"[(ngModel)]="distance" name="distance" required></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label floating>Vitesse moyenne (km/h)</ion-label>
+          <ion-input type="text"  [(ngModel)]="speed" name="speed" required></ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-label floating>Distance (km)</ion-label>
-    <ion-input type="text" ng-model="goal.distance"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Vitesse moyenne (km/h)</ion-label>
-    <ion-input type="text"  ng-model="goal.speed"></ion-input>
-  </ion-item>
-
-</ion-list>
-
-<button ion-button round>Calculez l'objectif</button>
-</form>
+      <button ion-button round type="submit">Calculez l'objectif</button>
+      </form>
+    </ion-col>
+    <ion-col col-12  *ngIf="validGoal">
+      <h1>Votre objectif : <br/>{{timeDisplay}} </h1>
+      <button ion-button round>Lancer l'entrainement pour cet objectif</button>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
 </ion-content>

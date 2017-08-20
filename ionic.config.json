@@ -1,5 +1,8 @@
 {
   "name": "marathon",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "8bc33a41",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }
